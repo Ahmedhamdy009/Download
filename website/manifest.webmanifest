@@ -1,0 +1,14 @@
+{
+  "name": "نزّلها",
+  "short_name": "نزّلها",
+  "description": "تنزيل بسيط للفيديو والصوت",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f8f7",
+  "theme_color": "#f5f8f7",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
