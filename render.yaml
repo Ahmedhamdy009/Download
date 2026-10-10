@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: nazzelha-personal
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: APP_PASSWORD
+        sync: false
+      - key: REQUIRE_APP_PASSWORD
+        value: "true"
