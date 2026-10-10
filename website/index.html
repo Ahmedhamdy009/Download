@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f8f7">
+  <meta name="description" content="واجهة بسيطة لتنزيل الفيديو أو الصوت على جهازك.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>نزّلها — تنزيل بسيط</title>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="نزّلها، الصفحة الرئيسية">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 16v3h14v-3"/></svg></span>
+        <span>نزّلها</span>
+      </a>
+      <span class="local-badge"><i></i> يعمل على جهازك</span>
+    </header>
+
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">بسيط وسريع</p>
+      <h1 id="title">الرابط عندك؟<br><span>خلّي الباقي علينا.</span></h1>
+      <p class="intro">حط رابط المحتوى، اختار فيديو أو صوت، وابدأ التنزيل.</p>
+    </section>
+
+    <section class="download-card" aria-label="إعداد التحميل">
+      <form id="download-form">
+        <label class="field-label" for="url">رابط المحتوى</label>
+        <div class="url-wrap">
+          <span class="link-symbol" aria-hidden="true">↗</span>
+          <input id="url" name="url" type="url" inputmode="url" placeholder="الصق الرابط هنا" autocomplete="url" required>
+          <button class="paste-button" id="paste-button" type="button">لصق</button>
+        </div>
+        <div class="options-heading"><span class="field-label">عايز تنزّل إيه؟</span><span class="small-note">اختار نوع الملف</span></div>
+        <div class="format-options" role="group" aria-label="نوع التنزيل">
+          <button class="format-option selected" type="button" data-kind="video" aria-pressed="true">
+            <span class="format-icon video-icon" aria-hidden="true">▶</span><span><b>فيديو</b><small>مع الصورة والصوت</small></span><span class="radio-dot"></span>
+          </button>
+          <button class="format-option" type="button" data-kind="audio" aria-pressed="false">
+            <span class="format-icon audio-icon" aria-hidden="true">♫</span><span><b>صوت MP3</b><small>ملف صوتي فقط</small></span><span class="radio-dot"></span>
+          </button>
+        </div>
+        <div class="quality-row" id="quality-row">
+          <label class="field-label" for="quality">جودة الفيديو</label>
+          <select id="quality" name="quality">
+            <option value="360">360p — حجم أصغر</option>
+            <option value="480">480p — عادية</option>
+            <option value="720" selected>720p — عالية</option>
+            <option value="1080">1080p — Full HD</option>
+            <option value="1440">1440p — 2K</option>
+            <option value="2160">2160p — 4K</option>
+          </select>
+          <span class="select-chevron" aria-hidden="true">⌄</span>
+        </div>
+        <button class="submit-button" id="submit-button" type="submit"><span>ابدأ التحميل</span><span aria-hidden="true">←</span></button>
+      </form>
+      <section class="progress-panel" id="progress-panel" hidden aria-live="polite">
+        <div class="progress-heading"><span id="progress-message">بنجهّز التحميل…</span><b id="progress-percent">0%</b></div>
+        <div class="progress-track"><span id="progress-fill"></span></div>
+        <p id="progress-detail">سيب الصفحة مفتوحة لحد ما التحميل يكتمل.</p>
+        <a class="save-button" id="save-button" href="#" hidden>حفظ الملف على الجهاز <span aria-hidden="true">↓</span></a>
+      </section>
+      <p class="error-message" id="error-message" role="alert" hidden></p>
+    </section>
+
+    <footer class="footer">
+      <span class="privacy-icon" aria-hidden="true">◉</span>
+      <span>التنزيل بيتم على الجهاز اللي مشغّل الموقع. استخدمه للمحتوى المسموح لك بتنزيله.</span>
+    </footer>
+    <p class="version-note">نسخة شخصية · لا تحتاج حسابًا</p>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
